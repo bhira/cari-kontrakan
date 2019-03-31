@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
 import routes from './route.web'
-import MainRouter from './lib/react-router'
-import theme from './constants/theme'
+import MainRouter from 'lib/react-router'
+import theme from 'constants/theme'
 
 const GlobalStyle = createGlobalStyle`
   body {

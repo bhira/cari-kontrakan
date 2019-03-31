@@ -1,8 +1,8 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
 import PropTypes from 'prop-types'
-import Navigation from '../../ui/navigation'
-import menus from '../../constants/menus'
+import Navigation from 'ui/navigation'
+import menus from 'constants/menus'
 
 export default function Layout(props) {
   return (
