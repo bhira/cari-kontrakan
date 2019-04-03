@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default function Columns(props) {
-  const children = React.Children.map(props.children, function(child) {
+  const children = React.Children.map(props.children, function (child) {
     if (React.isValidElement(child)) {
       return React.cloneElement(child)
     }
@@ -24,12 +26,25 @@ Columns.defaultProps = {
   rowGap: '10px'
 }
 
-Columns.Item = function(props) {
+Columns.Item = ({ to, children }) => {
   return (
-    <StyledDivColumnsItem>
-      {props.children}
+    <StyledDivColumnsItem to={to}>
+      {children}
     </StyledDivColumnsItem>
   )
+}
+
+Columns.Item.defaultProps = {
+  to: ``
+}
+
+Columns.Item.propTypes = {
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+    hash: PropTypes.string,
+    state: PropTypes.any
+  })])
 }
 
 const StyledDivColumns = styled.div`
@@ -40,4 +55,6 @@ const StyledDivColumns = styled.div`
   grid-row-gap: ${props => props.rowGap};
 `
 
-const StyledDivColumnsItem = styled.div``
+const StyledDivColumnsItem = styled(Link)`
+  text-decoration: none;
+`

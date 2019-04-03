@@ -12,6 +12,8 @@
   <meta name="msapplication-TileColor" content="#fff">
 
   <link rel="manifest" href="/manifest.json">
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+
   <title>Cari Kontrakan</title>
 </head>
 
@@ -24,7 +26,7 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js')
         .then(function (registration) {
-          console.log('[ServiceWorker] registration successfully', registration)
+          console.log('[ServiceWorker] registration successfully', registration.scope)
         })
         .catch(function (error) {
           console.log('[ServiceWorker] registration failed!', error)

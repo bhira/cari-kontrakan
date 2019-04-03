@@ -16,42 +16,24 @@ export default function() {
         extra={<Button>Daftarkan rumah kontrakan anda!</Button>}
       />
       <Container>
-        <Paragraph fontSize={'20px'}>Kontrakan Terpopuler</Paragraph>
+        <Paragraph fontSize={'25px'} fontWeight={`700`}>Kontrakan Terpopuler</Paragraph>
         <StyledDiv>
           <Columns templateColumn={3}>
-            <Columns.Item>
-              <Card
-                imageSrc={`https://via.placeholder.com/300.png`}
-                imageAlt={`Example Image 1`}
-              >
-                <Paragraph fontWeight={`700`}>
-                  Rp20.000.000 / tahun
-                </Paragraph>
-                <Paragraph>Lokasi: Jakarta Barat</Paragraph>
-              </Card>
-            </Columns.Item>
-            <Columns.Item>
-              <Card
-                imageSrc={`https://via.placeholder.com/300.png`}
-                imageAlt={`Example Image 1`}
-              >
-                <Paragraph fontWeight={`700`}>
-                  Rp20.000.000 / tahun
-                </Paragraph>
-                <Paragraph>Lokasi: Jakarta Barat</Paragraph>
-              </Card>
-            </Columns.Item>
-            <Columns.Item>
-              <Card
-                imageSrc={`https://via.placeholder.com/300.png`}
-                imageAlt={`Example Image 1`}
-              >
-                <Paragraph fontWeight={`700`}>
-                  Rp20.000.000 / tahun
-                </Paragraph>
-                <Paragraph>Lokasi: Jakarta Barat</Paragraph>
-              </Card>
-            </Columns.Item>
+            {[...Array(10).keys()].map(function(index) {
+              return (
+                <Columns.Item key={String(index)} to={`/detail/${index}/example-image-${index}`}>
+                  <Card
+                    imageSrc={`http://danlawrie.com/wp-content/uploads/original.jpg`}
+                    imageAlt={`Example Image ${index}`}
+                  >
+                    <Paragraph fontWeight={`700`}>
+                      Rp20.000.000 / tahun
+                    </Paragraph>
+                    <Paragraph>Lokasi: Jakarta Barat</Paragraph>
+                  </Card>
+                </Columns.Item>
+              )
+            })}
           </Columns>
         </StyledDiv>
       </Container>

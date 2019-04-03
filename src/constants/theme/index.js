@@ -5,6 +5,7 @@ export default {
     yellowOld: '#f9da88',
     black: '#131313',
     green: '#38a22f',
-    white: '#fff'
+    white: '#fff',
+    brown: '#f2f2f2'
   }
 }
