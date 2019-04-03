@@ -2,7 +2,7 @@ import React from 'react'
 import {Helmet} from 'react-helmet'
 import PropTypes from 'prop-types'
 import Navigation from 'ui/navigation'
-import menus from 'constants/menus'
+import menu from 'constants/menu'
 import Footer from '../footer'
 
 export default function Layout(props) {
@@ -15,7 +15,7 @@ export default function Layout(props) {
         <meta name="author" content={props.author} />
         <title>{props.title}</title>
       </Helmet>
-      <Navigation menus={menus} />
+      <Navigation menu={menu} />
       {props.children}
       <Footer />
     </React.Fragment>
