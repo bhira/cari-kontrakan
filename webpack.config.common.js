@@ -25,7 +25,10 @@ module.exports = {
       template: join(__dirname, 'public/index.html')
     }),
     new CopyPlugin([
-      { from: './src/service-worker.js', to: './' }
+      { from: './src/service-worker.js', to: './' },
+      { from: './public/manifest.json', to: './manifest.json' },
+      { from: './public/icon_144.png', to: './icon_144.png' },
+      { from: './public/icon_192.png', to: './icon_192.png' }
     ])
   ],
   resolve: {
