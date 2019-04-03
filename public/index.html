@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cari Kontrakan</title>
 </head>
+
 <body>
   <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('[ServiceWorker] registration successfully', registration)
+        })
+        .catch(function(error) {
+          console.log('[ServiceWorker] registration failed!', error)
+        })
+    } else {
+      console.log('[ServiceWorker] not supported in your browser!')
+    }
+  </script>
 </body>
+
 </html>
