@@ -8,6 +8,7 @@ module.exports = merge(common, {
     contentBase: resolve(__dirname, 'build'),
     compress: true,
     port: 3000,
-    historyApiFallback: true
+    historyApiFallback: true,
+    publicPath: '/'
   }
 })
