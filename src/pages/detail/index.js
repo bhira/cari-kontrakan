@@ -8,7 +8,7 @@ export default function Detail(props) {
     <React.Fragment>
       <Map />
       <StyledDiv>
-        <StyledImg 
+        <StyledImg
           src={`http://danlawrie.com/wp-content/uploads/original.jpg`}
           alt={props.match.params.title}
         />
