@@ -13,8 +13,8 @@ export default function Card(props) {
 }
 
 const StyledDivCard = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  border: solid 1px ${props => props.theme.colors.brown};
 `
 
 const StyledImage = styled.img`

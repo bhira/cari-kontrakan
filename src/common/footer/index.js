@@ -4,9 +4,9 @@ import Container from 'ui/container'
 import Columns from 'ui/columns'
 import Paragraph from 'ui/paragraph'
 
-export default function Footer() {
+export default function Footer(props) {
   return (
-    <StyledDiv>
+    <StyledDiv {...props}>
       <Container>
         <Columns templateColumn={3}>
           <Columns.Item>
