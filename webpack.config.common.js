@@ -2,7 +2,9 @@ const { resolve, join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js'
+  },
   output: {
     path: resolve(__dirname, 'build/'),
     filename: '[name].js',

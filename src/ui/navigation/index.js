@@ -4,15 +4,15 @@ import Container from '../container'
 
 function NavigationItem(props) {
   if (
-    props.menus &&
-    Array.isArray(props.menus) &&
-    props.menus.length
+    props.menu &&
+    Array.isArray(props.menu) &&
+    props.menu.length
   ) {
-    return props.menus.map(function(menu, index) {
+    return props.menu.map(function(menuItem, index) {
       return (
         <StyledLi key={String(index)}>
-          <StyledLink href={menu.href} target={menu.target}>
-            {menu.title}
+          <StyledLink href={menuItem.href} target={menuItem.target}>
+            {menuItem.title}
           </StyledLink>
         </StyledLi>
       )
@@ -27,7 +27,7 @@ export default function Navigation(props) {
     <StyledNav>
       <Container>
         <StyledUl>
-          <NavigationItem menus={props.menus} />
+          <NavigationItem menu={props.menu} />
         </StyledUl>
       </Container>
     </StyledNav>
