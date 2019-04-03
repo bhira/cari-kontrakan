@@ -1,9 +1,10 @@
 const { resolve, join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
   },
   output: {
     path: resolve(__dirname, 'build/'),
@@ -22,7 +23,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public/index.html')
-    })
+    }),
+    new CopyPlugin([
+      { from: './src/service-worker.js', to: './' }
+    ])
   ],
   resolve: {
     extensions: ['.js', '.jsx']
