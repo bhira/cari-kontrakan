@@ -1,11 +1,14 @@
-const version = '0.1.4'
+const version = '0.1.7'
 
 const currentCacheName = `cari-kontrakan-web-v$${version}`
 
 const allStaticFiles = [
   '/',
   '/app.js',
-  '/index.html'
+  '/index.html',
+  '/icon_144.png',
+  '/icon_192.png',
+  '/manifest.json'
 ]
 
 self.addEventListener('install', function(event) {
@@ -21,11 +24,7 @@ self.addEventListener('install', function(event) {
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      if (response) {
-        return response
-      }
-
-      return fetch(event.request)
+      return response || fetch(event.request)
     })
   )
 })
