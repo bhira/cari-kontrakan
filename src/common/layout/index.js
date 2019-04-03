@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet'
 import PropTypes from 'prop-types'
 import Navigation from 'ui/navigation'
 import menus from 'constants/menus'
+import Footer from '../footer'
 
 export default function Layout(props) {
   return (
@@ -16,6 +17,7 @@ export default function Layout(props) {
       </Helmet>
       <Navigation menus={menus} />
       {props.children}
+      <Footer />
     </React.Fragment>
   )
 }
